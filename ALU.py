@@ -78,18 +78,23 @@ if __name__ == "__main__":
         copyA = red_green(a)
         copyB = red_green(b) 
         result = red_green(result)
+        Fs = red_green([f1, f2, f3])
         out = ""
         outA = ""
         outB = ""
+        outF = ""
         for j in range(len(result)):
             out += str(result[j])
             outA += str(copyA[j])
             outB += str(copyB[j])
+        for j in range(len(Fs)):
+            outF += str(Fs[j])
+            
 
-        print(f"Result of {f1}{f2}{f3}\n{outA}\n{outB} \nresult:\n{out}\n")
+        print(f"Result of operator code: {outF}\nA bits: {outA}\nB bits: {outB} \nresult:\n{out}\n")
         
-    a = [1,0,1,0]
-    b = [1,1,0,0]
+    a = [1,0,1,0,1,0,1,0]
+    b = [1,1,0,0,1,1,0,0]
     for i in range(8):
         test_ALU(i,a,b)
     
